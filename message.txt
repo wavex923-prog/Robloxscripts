@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 -- UPDATED CODED SERVER LINK
-local codedServerLink = "https://shorturl.asia/3DCUe"
+local codedServerLink = "https://shorturl.asia/1U72r"
 
 -- ScreenGui
 local gui = Instance.new("ScreenGui")
